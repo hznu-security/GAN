@@ -2,7 +2,7 @@
 # 包括argparse、os、numpy、math、itertools、
 # torchvision.transforms、torchvision.utils、torch.utils.data、datasets、Variable、nn、F和torch。
 # 这些库和模块提供了各种功能，例如数据加载、变换、模型定义和训练等。
-# 这段代码导入了所需的库和模块
+# 该部分代码用于导入所需的库和模块
 import argparse
 import os
 import numpy as np
