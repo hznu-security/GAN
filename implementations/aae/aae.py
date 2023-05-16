@@ -36,8 +36,7 @@ import torch
 # 这段代码创建一个名为 "images" 的新目录，该目录位于当前工作目录中。
 # os.makedirs() 函数用于创建目录。
 # 传递 exist_ok=True 参数给函数，以避免在目录已经存在时引发错误。
-# 如果目录已经存在，函数将不会创建新目录，也不会引发错误。
-# 如果目录不存在，函数将创建一个名为 "images" 的新目录。
+# 如果目录已经存在，函数将不会创建新目录，也不会引发错误。如果目录不存在，函数将创建一个名为 "images" 的新目录。
 os.makedirs("images", exist_ok=True)
 
 
@@ -55,6 +54,31 @@ os.makedirs("images", exist_ok=True)
 # 10.sample_interval：图像采样的间隔，默认为 400。
 # 然后，parser.parse_args() 函数将解析命令行参数，并将结果存储在 opt 变量中。
 # 最后，print(opt) 函数将打印出所有参数的值。这段代码的作用是解析命令行参数，并将其存储在 opt 变量中，以便在程序的其他部分中使用这些参数。
+
+# epoch：
+# 在机器学习中，epoch（中文翻译为“时代”或“纪元”）是指将整个数据集正向传递和反向传递一次的过程。
+# 在训练神经网络时，通常需要多次迭代（epoch）来优化模型的参数，以达到更好的性能。
+# 每个epoch的训练过程包括将训练数据输入到模型中，计算损失函数，反向传播误差，更新模型参数等步骤。
+# 通常，每个epoch的训练过程包含多个批次（batch），每个批次包含多个样本。
+# 例如，如果训练数据集包含 1000 个样本，每个批次包含 10 个样本，那么每个epoch的训练过程将包含 100 个批次。
+
+# Adam 优化器：
+# Adam 优化器是一种常用的梯度下降算法，它可以自适应地调整学习率。
+# Adam 优化器的全称是 Adaptive Moment Estimation，即自适应矩估计算法。
+# Adam 优化器的学习率是自适应的，它会根据当前的梯度值自动调整学习率。
+# Adam（Adaptive Moment Estimation）是一种自适应学习率的优化算法，常用于训练神经网络。
+# Adam 算法结合了 AdaGrad 和 RMSProp 两种优化算法的优点，能够自适应地调整每个参数的学习率，
+# 并且能够在训练过程中动态地调整学习率的大小。
+# Adam 算法的核心思想是根据梯度的一阶矩估计和二阶矩估计动态调整每个参数的学习率，从而实现更快的收敛和更好的泛化性能。
+
+# 一阶矩估计：
+# 一阶矩估计是指梯度的一阶矩，即梯度的均值。
+# 一阶矩估计可以看作是对梯度的期望值的估计，它可以用来估计梯度的平均值。
+
+# 二阶矩估计：
+# 二阶矩估计是指梯度的二阶矩，即梯度的方差。
+# 二阶矩估计可以看作是对梯度的方差的估计，它可以用来估计梯度的变化情况。
+
 parser = argparse.ArgumentParser()
 parser.add_argument("--n_epochs", type=int, default=200, help="number of epochs of training")
 parser.add_argument("--batch_size", type=int, default=64, help="size of the batches")
@@ -89,7 +113,8 @@ cuda = True if torch.cuda.is_available() else False
 
 
 # 这段代码定义了一个名为 reparameterization 的函数，它接受两个张量 mu 和 logvar 作为输入。
-# 这两个张量分别表示潜在编码的均值和方差。函数的目的是从给定的均值和方差中采样一个潜在编码 z。
+# 这两个张量分别表示潜在编码的均值和方差。
+# 函数的目的是从给定的均值和方差中采样一个潜在编码 z。
 # 具体地，函数首先计算标准差 std，其中 std 的值等于方差的自然指数除以 2。
 # 然后，函数使用 np.random.normal() 函数生成一个均值为 0、方差为 1 的正态分布随机数张量 sampled_z，
 # 其形状为 (mu.size(0), opt.latent_dim)。这个张量将用于采样潜在编码。
