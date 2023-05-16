@@ -1,8 +1,19 @@
 # 这段代码是一个Python脚本，它导入了一些必要的库和模块，
-# 包括argparse、os、numpy、math、itertools、
-# torchvision.transforms、torchvision.utils、torch.utils.data、datasets、Variable、nn、F和torch。
+# 包括argparse、os、numpy、math、itertools、torchvision.transforms、torchvision.utils、torch.utils.data、datasets、Variable、nn、F和torch。
 # 这些库和模块提供了各种功能，例如数据加载、变换、模型定义和训练等。
-# 该部分代码用于导入所需的库和模块
+# 1. argparse: 用于解析命令行参数和选项的标准 Python 库。
+# 2. os: 提供了许多与操作系统交互的函数。
+# 3. numpy: 用于科学计算的基础库，支持高性能的数组和矩阵运算。
+# 4. math: 提供了许多数学函数。
+# 5. itertools: 提供了许多用于操作迭代器的函数。
+# 6. torchvision.transforms: 提供了常用的图像变换方法。
+# 7. torchvision.utils: 提供了一些用于处理图像的工具函数。
+# 8. torch.utils.data: 提供了用于加载数据的工具函数。
+# 9. torchvision.datasets: 提供了一些常用的数据集。
+# 10.torch.autograd: 提供了自动求导功能。
+# 11.torch.nn: 提供了神经网络相关的函数和类。
+# 12.torch.nn.functional: 提供了一些常用的神经网络函数。
+# 13.torch: PyTorch 的核心库。
 import argparse
 import os
 import numpy as np
